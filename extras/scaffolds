@@ -1,0 +1,17 @@
+rails g scaffold Fecha numero:string
+rails g scaffold Torneo nombre:string
+
+rails g model FechaTorneo fecha:references torneo:references
+
+rails g scaffold Participante nombre:string apellido:string apodo:string imagen:string
+rails g scaffold Tactica nombre:string
+rails g scaffold Posicion nombre:string imagen:string
+rails g scaffold Club nombre:string apodo:string imagen:string
+rails g scaffold ValorPuntaje doble_amarilla:integer roja_directa:integer amarilla:integer figura:integer penal_errado:integer gol_penal:integer gol:integer penal_atajado:integer valla_invicta:boolean chenemigo:boolean 
+
+rails g scaffold Equipo nombre:string imagen:string participante:references tactica:references
+rails g scaffold Jugador nombre:string apellido:string apodo:string fecha_nacimiento:date imagen:string club:references posicion:references
+
+rails g model JugadorEquipo jugador:references equipo:references
+rails g model JugadorEquipoFechaTorneo jugador_equipo:references fecha_torneo:references capitan:boolean
+rails g model JugadorFechaTorneo jugador:references fecha_torneo:references
