@@ -1,0 +1,45 @@
+<%= form_for(@jugador) do |f| %>
+  <% if @jugador.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@jugador.errors.count, "error") %> prohibited this jugador from being saved:</h2>
+
+      <ul>
+      <% @jugador.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre %><br>
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :apellido %><br>
+    <%= f.text_field :apellido %>
+  </div>
+  <div class="field">
+    <%= f.label :apodo %><br>
+    <%= f.text_field :apodo %>
+  </div>
+  <div class="field">
+    <%= f.label :fecha_nacimiento %><br>
+    <%= f.date_select :fecha_nacimiento %>
+  </div>
+  <div class="field">
+    <%= f.label :imagen %><br>
+    <%= f.text_field :imagen %>
+  </div>
+  <div class="field">
+    <%= f.label :club_id %><br>
+    <%= f.text_field :club_id %>
+  </div>
+  <div class="field">
+    <%= f.label :posicion_id %><br>
+    <%= f.text_field :posicion_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

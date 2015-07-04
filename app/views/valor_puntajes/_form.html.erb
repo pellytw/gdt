@@ -1,0 +1,57 @@
+<%= form_for(@valor_puntaje) do |f| %>
+  <% if @valor_puntaje.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@valor_puntaje.errors.count, "error") %> prohibited this valor_puntaje from being saved:</h2>
+
+      <ul>
+      <% @valor_puntaje.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :doble_amarilla %><br>
+    <%= f.number_field :doble_amarilla %>
+  </div>
+  <div class="field">
+    <%= f.label :roja_directa %><br>
+    <%= f.number_field :roja_directa %>
+  </div>
+  <div class="field">
+    <%= f.label :amarilla %><br>
+    <%= f.number_field :amarilla %>
+  </div>
+  <div class="field">
+    <%= f.label :figura %><br>
+    <%= f.number_field :figura %>
+  </div>
+  <div class="field">
+    <%= f.label :penal_errado %><br>
+    <%= f.number_field :penal_errado %>
+  </div>
+  <div class="field">
+    <%= f.label :gol_penal %><br>
+    <%= f.number_field :gol_penal %>
+  </div>
+  <div class="field">
+    <%= f.label :gol %><br>
+    <%= f.number_field :gol %>
+  </div>
+  <div class="field">
+    <%= f.label :penal_atajado %><br>
+    <%= f.number_field :penal_atajado %>
+  </div>
+  <div class="field">
+    <%= f.label :valla_invicta %><br>
+    <%= f.check_box :valla_invicta %>
+  </div>
+  <div class="field">
+    <%= f.label :chenemigo %><br>
+    <%= f.check_box :chenemigo %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

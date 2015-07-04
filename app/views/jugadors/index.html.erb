@@ -1,0 +1,39 @@
+<h1>Listing jugadors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Apodo</th>
+      <th>Fecha nacimiento</th>
+      <th>Imagen</th>
+      <th>Club</th>
+      <th>Posicion</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @jugadors.each do |jugador| %>
+      <tr>
+        <td><%= jugador.nombre %></td>
+        <td><%= jugador.apellido %></td>
+        <td><%= jugador.apodo %></td>
+        <td><%= jugador.fecha_nacimiento %></td>
+        <td><%= jugador.imagen %></td>
+        <td><%= jugador.club %></td>
+        <td><%= jugador.posicion %></td>
+        <td><%= link_to 'Show', jugador %></td>
+        <td><%= link_to 'Edit', edit_jugador_path(jugador) %></td>
+        <td><%= link_to 'Destroy', jugador, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Jugador', new_jugador_path %>

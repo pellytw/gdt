@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  apellido: MyString
+  apodo: MyString
+  fecha_nacimiento: 2015-07-04
+  imagen: MyString
+  club_id: 
+  posicion_id: 
+
+two:
+  nombre: MyString
+  apellido: MyString
+  apodo: MyString
+  fecha_nacimiento: 2015-07-04
+  imagen: MyString
+  club_id: 
+  posicion_id: 

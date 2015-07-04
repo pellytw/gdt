@@ -1,10 +1,29 @@
 Gdt::Application.routes.draw do
+  get "pagina_inicio/index"
+  resources :jugadors
+
+  resources :equipos
+
+  resources :valor_puntajes
+
+  resources :clubs
+
+  resources :posicions
+
+  resources :tacticas
+
+  resources :participantes
+
+  resources :torneos
+
+  resources :fechas
+
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'pagina_inicio#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

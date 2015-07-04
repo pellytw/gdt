@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  imagen: MyString
+  participante_id: 
+  tactica_id: 
+
+two:
+  nombre: MyString
+  imagen: MyString
+  participante_id: 
+  tactica_id: 

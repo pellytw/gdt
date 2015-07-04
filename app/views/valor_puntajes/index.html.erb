@@ -1,0 +1,45 @@
+<h1>Listing valor_puntajes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Doble amarilla</th>
+      <th>Roja directa</th>
+      <th>Amarilla</th>
+      <th>Figura</th>
+      <th>Penal errado</th>
+      <th>Gol penal</th>
+      <th>Gol</th>
+      <th>Penal atajado</th>
+      <th>Valla invicta</th>
+      <th>Chenemigo</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @valor_puntajes.each do |valor_puntaje| %>
+      <tr>
+        <td><%= valor_puntaje.doble_amarilla %></td>
+        <td><%= valor_puntaje.roja_directa %></td>
+        <td><%= valor_puntaje.amarilla %></td>
+        <td><%= valor_puntaje.figura %></td>
+        <td><%= valor_puntaje.penal_errado %></td>
+        <td><%= valor_puntaje.gol_penal %></td>
+        <td><%= valor_puntaje.gol %></td>
+        <td><%= valor_puntaje.penal_atajado %></td>
+        <td><%= valor_puntaje.valla_invicta %></td>
+        <td><%= valor_puntaje.chenemigo %></td>
+        <td><%= link_to 'Show', valor_puntaje %></td>
+        <td><%= link_to 'Edit', edit_valor_puntaje_path(valor_puntaje) %></td>
+        <td><%= link_to 'Destroy', valor_puntaje, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Valor puntaje', new_valor_puntaje_path %>

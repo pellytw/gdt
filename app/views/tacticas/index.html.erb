@@ -1,0 +1,27 @@
+<h1>Listing tacticas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tacticas.each do |tactica| %>
+      <tr>
+        <td><%= tactica.nombre %></td>
+        <td><%= link_to 'Show', tactica %></td>
+        <td><%= link_to 'Edit', edit_tactica_path(tactica) %></td>
+        <td><%= link_to 'Destroy', tactica, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tactica', new_tactica_path %>

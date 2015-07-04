@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  jugador_id: 
+  equipo_id: 
+
+two:
+  jugador_id: 
+  equipo_id: 

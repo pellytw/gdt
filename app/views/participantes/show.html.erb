@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @participante.nombre %>
+</p>
+
+<p>
+  <strong>Apellido:</strong>
+  <%= @participante.apellido %>
+</p>
+
+<p>
+  <strong>Apodo:</strong>
+  <%= @participante.apodo %>
+</p>
+
+<p>
+  <strong>Imagen:</strong>
+  <%= @participante.imagen %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @participante.user %>
+</p>
+
+<%= link_to 'Edit', edit_participante_path(@participante) %> |
+<%= link_to 'Back', participantes_path %>

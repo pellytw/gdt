@@ -11,7 +11,120 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150704144449) do
+ActiveRecord::Schema.define(version: 20150704164323) do
+
+  create_table "clubs", force: true do |t|
+    t.string   "nombre"
+    t.string   "apodo"
+    t.string   "imagen"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "equipos", force: true do |t|
+    t.string   "nombre"
+    t.string   "imagen"
+    t.integer  "participante_id"
+    t.integer  "tactica_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "equipos", ["participante_id"], name: "index_equipos_on_participante_id", using: :btree
+  add_index "equipos", ["tactica_id"], name: "index_equipos_on_tactica_id", using: :btree
+
+  create_table "fecha_torneos", force: true do |t|
+    t.integer  "fecha_id"
+    t.integer  "torneo_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "fecha_torneos", ["fecha_id"], name: "index_fecha_torneos_on_fecha_id", using: :btree
+  add_index "fecha_torneos", ["torneo_id"], name: "index_fecha_torneos_on_torneo_id", using: :btree
+
+  create_table "fechas", force: true do |t|
+    t.string   "numero"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "jugador_equipo_fecha_torneos", force: true do |t|
+    t.integer  "jugador_equipo_id"
+    t.integer  "fecha_torneo_id"
+    t.boolean  "capitan"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "jugador_equipo_fecha_torneos", ["fecha_torneo_id"], name: "index_jugador_equipo_fecha_torneos_on_fecha_torneo_id", using: :btree
+  add_index "jugador_equipo_fecha_torneos", ["jugador_equipo_id"], name: "index_jugador_equipo_fecha_torneos_on_jugador_equipo_id", using: :btree
+
+  create_table "jugador_equipos", force: true do |t|
+    t.integer  "jugador_id"
+    t.integer  "equipo_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "jugador_equipos", ["equipo_id"], name: "index_jugador_equipos_on_equipo_id", using: :btree
+  add_index "jugador_equipos", ["jugador_id"], name: "index_jugador_equipos_on_jugador_id", using: :btree
+
+  create_table "jugador_fecha_torneos", force: true do |t|
+    t.integer  "jugador_id"
+    t.integer  "fecha_torneo_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "jugador_fecha_torneos", ["fecha_torneo_id"], name: "index_jugador_fecha_torneos_on_fecha_torneo_id", using: :btree
+  add_index "jugador_fecha_torneos", ["jugador_id"], name: "index_jugador_fecha_torneos_on_jugador_id", using: :btree
+
+  create_table "jugadors", force: true do |t|
+    t.string   "nombre"
+    t.string   "apellido"
+    t.string   "apodo"
+    t.date     "fecha_nacimiento"
+    t.string   "imagen"
+    t.integer  "club_id"
+    t.integer  "posicion_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "jugadors", ["club_id"], name: "index_jugadors_on_club_id", using: :btree
+  add_index "jugadors", ["posicion_id"], name: "index_jugadors_on_posicion_id", using: :btree
+
+  create_table "participantes", force: true do |t|
+    t.string   "nombre"
+    t.string   "apellido"
+    t.string   "apodo"
+    t.string   "imagen"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "participantes", ["user_id"], name: "index_participantes_on_user_id", using: :btree
+
+  create_table "posicions", force: true do |t|
+    t.string   "nombre"
+    t.string   "imagen"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tacticas", force: true do |t|
+    t.string   "nombre"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "torneos", force: true do |t|
+    t.string   "nombre"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -32,5 +145,20 @@ ActiveRecord::Schema.define(version: 20150704144449) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "valor_puntajes", force: true do |t|
+    t.integer  "doble_amarilla"
+    t.integer  "roja_directa"
+    t.integer  "amarilla"
+    t.integer  "figura"
+    t.integer  "penal_errado"
+    t.integer  "gol_penal"
+    t.integer  "gol"
+    t.integer  "penal_atajado"
+    t.boolean  "valla_invicta"
+    t.boolean  "chenemigo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  doble_amarilla: 1
+  roja_directa: 1
+  amarilla: 1
+  figura: 1
+  penal_errado: 1
+  gol_penal: 1
+  gol: 1
+  penal_atajado: 1
+  valla_invicta: false
+  chenemigo: false
+
+two:
+  doble_amarilla: 1
+  roja_directa: 1
+  amarilla: 1
+  figura: 1
+  penal_errado: 1
+  gol_penal: 1
+  gol: 1
+  penal_atajado: 1
+  valla_invicta: false
+  chenemigo: false
