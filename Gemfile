@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.13'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+#gem 'sqlite3'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
@@ -43,3 +43,8 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem 'mysql'
+gem 'mysql2'
+
+gem 'devise'
