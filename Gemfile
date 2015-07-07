@@ -1,50 +1,79 @@
 source 'https://rubygems.org'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+# GEMAS DE RAILS
+# ---------------------------
 gem 'rails', '4.0.13'
 
-# Use sqlite3 as the database for Active Record
-#gem 'sqlite3'
+gem "less-rails"
 
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.2'
+gem 'sass-rails'
 
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
+gem 'coffee-rails'
 
-# Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
+gem 'uglifier'
 
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+gem 'railties'
 
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
-
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
-
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.2'
-
-group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
-end
-
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'debugger'
 
 gem 'mysql'
+
 gem 'mysql2'
 
 gem 'devise'
+
+gem 'cancancan'
+
+gem 'kaminari'
+
+gem "therubyracer"
+
+gem 'turbolinks'
+
+#gem "nested_form"
+
+#gem 'activeadmin', github: 'activeadmin'
+# ---------------------------
+
+# GEMAS DE BOOTSTRAP
+# ---------------------------
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+
+gem 'bootstrap-generators', :git => 'git://github.com/decioferreira/bootstrap-generators.git'
+
+gem "font-awesome-rails"
+# ---------------------------
+
+# GEMAS DE JAVASCRIPT Y JQUERY
+# ---------------------------
+gem 'jquery-rails'
+
+gem 'jquery-ui-themes'
+
+gem 'jquery-ui-rails'
+
+gem 'rails4-autocomplete'
+
+gem 'jquery_datepicker', github: 'foodforarabbit/jquery_datepicker'
+
+gem 'select2-rails', '3.5.9.2'
+# ---------------------------
+
+# GEMAS PARA DATATABLES
+# ---------------------------
+gem 'jquery-datatables-rails', '3.1.1'
+
+gem 'ajax-datatables-rails', github: 'antillas21/ajax-datatables-rails', branch: 'master'
+# ---------------------------
+
+# GEMAS PARA PRODUCCION
+# ---------------------------
+#gem 'unicorn'
+# ---------------------------
+
+# GEMAS PARA CONVERTIR EN PDF
+# ---------------------------
+#gem 'wicked_pdf'
+
+#gem 'wkhtmltopdf-binary'
+# ---------------------------
