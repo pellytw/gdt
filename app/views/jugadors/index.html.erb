@@ -1,40 +1,26 @@
-<h1>Listing jugadors</h1>
+<div class="page-header">
+  <%= link_to new_jugador_path, :class => 'btn btn-success' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    Nuevo jugador
+  <% end %>
+  <h1>Listado de jugadores</h1>
+</div>
 
-<table class="table table-striped table-bordered">
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Apellido</th>
-      <th>Apodo</th>
-      <th>Fecha nacimiento</th>
-      <th>Imagen</th>
-      <th>Club</th>
-      <th>Posicion</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @jugadors.each do |jugador| %>
+<div class="table-responsive">
+  <table id="tabla-jugador" class="table table-striped table-bordered table-hover" data-source = "<%= jugadors_path(format: :json) %>" >
+    <thead>
       <tr>
-        <td><%= jugador.nombre %></td>
-        <td><%= jugador.apellido %></td>
-        <td><%= jugador.apodo %></td>
-        <td><%= jugador.fecha_nacimiento %></td>
-        <td><%= jugador.imagen %></td>
-        <td><%= jugador.club %></td>
-        <td><%= jugador.posicion %></td>
-        <td><%= link_to 'Show', jugador %></td>
-        <td><%= link_to 'Edit', edit_jugador_path(jugador) %></td>
-        <td><%= link_to 'Destroy', jugador, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Apodo</th>
+            <th>Club</th>
+            <th>Posicion</th>
+            <th class="text-center col-md-1">Acciones</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
-
-<%= link_to 'New Jugador', new_jugador_path, :class => "btn btn-primary fa fa-plus" %>
+    <tbody>
+    </tbody>
+  </table>
+</div>
 

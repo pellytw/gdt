@@ -1,5 +1,5 @@
 class EquipoDatatable < AjaxDatatablesRails::Base
-include AjaxDatatablesRails::Extensions::Kaminari
+  include AjaxDatatablesRails::Extensions::Kaminari
   def sortable_columns
     # Declare strings in this format: ModelName.column_name
     @sortable_columns ||= ['equipos.nombre','equipos.participante_id','equipos.tactica_id']
@@ -35,6 +35,10 @@ include AjaxDatatablesRails::Extensions::Kaminari
 
   def get_raw_records
     Equipo.all
+  end
+
+  def sort_records(records)
+    records
   end
   
   # ==== Insert 'presenter'-like methods below if necessary

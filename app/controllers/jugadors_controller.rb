@@ -4,8 +4,10 @@ class JugadorsController < ApplicationController
   respond_to :html
 
   def index
-    @jugadors = Jugador.all
-    respond_with(@jugadors)
+    respond_to do |format|
+      format.html
+      format.json { render json: JugadorDatatable.new(view_context) }
+    end
   end
 
   def show
