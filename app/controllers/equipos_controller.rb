@@ -4,8 +4,10 @@ class EquiposController < ApplicationController
   respond_to :html
 
   def index
-    @equipos = Equipo.all
-    respond_with(@equipos)
+    respond_to do |format|
+      format.html
+      format.json { render json: EquipoDatatable.new(view_context) }
+    end
   end
 
   def show
