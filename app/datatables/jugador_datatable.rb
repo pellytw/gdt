@@ -2,12 +2,12 @@ class JugadorDatatable < AjaxDatatablesRails::Base
   include AjaxDatatablesRails::Extensions::Kaminari
   def sortable_columns
     # Declare strings in this format: ModelName.column_name
-    @sortable_columns ||= ['jugadors.nombre','jugadors.apellido','jugadors.apodo','jugadors.posicion_id','jugadors.club_id']
+    @sortable_columns ||= ['jugadors.nombre','jugadors.apellido','jugadors.posicion_id','jugadors.club_id']
   end
 
   def searchable_columns
     # Declare strings in this format: ModelName.column_name
-    @searchable_columns ||= ['Jugador.nombre','Jugador.apellido','Jugador.apodo','Jugador.posicion_id','Jugador.club_id']
+    @searchable_columns ||= ['Jugador.nombre','Jugador.apodo','Jugador.posicion_id','Jugador.club_id']
   end
 
   private
@@ -15,11 +15,9 @@ class JugadorDatatable < AjaxDatatablesRails::Base
   def data
     records.map do |record|
       [
-        record.nombre,
-        record.apellido,
-        record.apodo,
-        record.posicion_id,
-        record.club_id,
+        record.nombre,      
+        record.club.to_s,
+        record.posicion.to_s,
         '<div class="dropdown">
           <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
             Acciones

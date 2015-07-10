@@ -1,4 +1,4 @@
-<%= form_for(@equipo) do |f| %>
+<%= form_for(@equipo, :html => { :class => "form-horizontal" }) do |f| %>
   <% if @equipo.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@equipo.errors.count, "error") %> prohibited this equipo from being saved:</h2>
@@ -11,23 +11,53 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :nombre %><br>
-    <%= f.text_field :nombre %>
+  <div class="form-group">
+    <%= f.label :nombre, :class => "col-sm-2 control-label" %>
+    <div class="col-sm-4">
+      <%= f.text_field :nombre, :class => "form-control" %>
+    </div>
+    <%= f.label :participante_id, :class => "col-sm-2 control-label" %>
+    <div class="col-sm-4">
+      <%= f.text_field :participante_id, :class => "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :imagen %><br>
-    <%= f.text_field :imagen %>
+  <div class="form-group">
+    <%= f.label :imagen, :class => "col-sm-2 control-label" %>
+    <div class="col-sm-4">
+      <%= f.text_field :imagen, :class => "form-control" %>
+    </div>
+    <%= f.label :tactica_id, :class => "col-sm-2 control-label" %>
+    <div class="col-sm-4">
+      <%= f.collection_select(:tactica_id, Tactica.all, :id, :nombre) %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :participante_id %><br>
-    <%= f.text_field :participante_id %>
+
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Jugador</label>    
+    <div class="col-sm-4">
+      <%= select_tag 'jugador', options_from_collection_for_select(Jugador.all, "id", "nombre"), {:id => "select_jugador", prompt: "Por favor seleccione"} %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :tactica_id %><br>
-    <%= f.text_field :tactica_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+
+  <legend>Plantel</legend>
+  <%= select_tag 'jugador', options_from_collection_for_select(Jugador.all, "id", "nombre"), {:id => "select_jugador", prompt: "Por favor seleccione"} %>
+  <button class="btn btn-primary btn-xs" id="boton_agregar_jugador">Agregar Jugador</button>
+  <hr/>
+  <% @jugadores.each do |j| %>
+    <%= j.nombre %>
+  <% end %>
+  <h3><span class="label label-primary">Arqueros</span></h3>
+  <h3><span class="label label-primary">Defensores</span></h3>
+  <h3><span class="label label-primary">Volantes</span></h3>
+  <h3><span class="label label-primary">Delanteros</span></h3>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= f.submit :class => "btn btn-primary", :value => "Guardar" %>
+      <%= link_to jugadors_path, :class => 'btn btn-default' do %>
+        <span class="glyphicon glyphicon-list-alt"></span>
+        Atrás
+      <% end %>
+    </div>
   </div>
 <% end %>

@@ -17,7 +17,7 @@ class EquipoDatatable < AjaxDatatablesRails::Base
       [
         record.nombre,
         record.participante_id,
-        record.tactica_id,
+        record.tactica.to_s,
         '<div class="dropdown">
           <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
             Acciones

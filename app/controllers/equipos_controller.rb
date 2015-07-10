@@ -1,5 +1,6 @@
 class EquiposController < ApplicationController
   before_action :set_equipo, only: [:show, :edit, :update, :destroy]
+  before_action :jugadores_equipo, only: [:edit]
 
   respond_to :html
 
@@ -45,5 +46,11 @@ class EquiposController < ApplicationController
 
     def equipo_params
       params.require(:equipo).permit(:nombre, :imagen, :participante_id, :tactica_id)
+    end
+
+    def jugadores_equipo
+      jugadores_equipo = JugadorEquipo.where(equipo_id: @equipo.id)
+      jugadores_equipo_ids = jugadores_equipo.pluck(:jugador_id)
+      @jugadores = Jugador.where(id: jugadores_equipo_ids)
     end
 end
